@@ -71,6 +71,14 @@ ul {
     flex-wrap: wrap;
 }
 
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
 .justify-content-center {
     justify-content: center;
 }
@@ -113,8 +121,28 @@ ul {
     margin-top: 15px;
 }
 
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
 .ml-20 {
     margin-left: 20px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mr-10 {
+    margin-right: 10px;
 }
 
 .mr-100 {
@@ -141,6 +169,24 @@ ul {
     padding: 50px;
 }
 
+/* bouton */
+
+.btn {
+    width: 130px;
+    height: 35px;
+    box-shadow: var(--box-shadow);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.btn-back {
+    background-color: var(--warning-color);
+    color: var(--white-color);
+}
 
 /* Color */
 
@@ -192,14 +238,31 @@ header {
     font-weight: 400;
 }
 
-.navBar ul {
-    width: 100%;
+.navBar .surf {
+    width: 80%;
     display: flex;
-    justify-content: space-around;
+}
+
+.navBar .logo {
+    width: 20%;
+    display: flex;
 }
 
 .navBar ul li {
     display: inline-block;
+}
+
+
+.navBar ul li a {
+    padding: 30px;
+    margin-left: 50px;
+    border-radius: var(--border-radius);
+}
+
+.navBar ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transition: 0.5s;
 }
 
 footer {
@@ -247,19 +310,44 @@ footer {
 
 /* Notre idée */
 
+
 .card {
-    width: 325px;
-    height: 325px;
+    width: 300px;
+    height: 300px;
+    color: var(--black-color);
     border-radius: var(--border-radius);
     box-shadow: var(--border-radius);
     transition: transform .4s;
 }
 
+.card>p {
+    width: 80%;
+    text-align: center;
+}
+
 .card:hover {
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
     transform: scale(1.5);
 }
 
 /* Participer */
+
+.description-content {
+    width: 1000px;
+    height: fit-content;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    color: var(--primary-color);
+}
+
+.description-content div {
+    width: 50%;
+    padding: 15px;
+}
+
+.title {
+    font-weight: bold;
+    text-decoration: underline;
+}

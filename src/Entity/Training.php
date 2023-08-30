@@ -26,9 +26,6 @@ class Training
     #[ORM\Column(length: 150)]
     private ?string $title = null;
 
-    #[ORM\OneToMany(mappedBy: 'createdBy', targetEntity: User::class)]
-    private Collection $users;
-
     #[ORM\Column(length: 150)]
     private ?string $place = null;
 
@@ -40,7 +37,6 @@ class Training
 
     public function __construct()
     {
-        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -80,35 +76,6 @@ class Training
     public function setTitle(string $title): static
     {
         $this->title = $title;
-
-        return $this;
-    }
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
-
-    public function addUser(User $user): static
-    {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->setCreatedBy($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): static
-    {
-        if ($this->users->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getCreatedBy() === $this) {
-                $user->setCreatedBy(null);
-            }
-        }
 
         return $this;
     }

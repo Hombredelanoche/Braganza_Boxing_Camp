@@ -6,6 +6,7 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -36,7 +37,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $name = null;
 
     #[ORM\Column(length: 100)]
-    private ?string $fisrtname = null;
+    private ?string $firstname = null;
+
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $createdAt = null;
@@ -45,17 +47,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $phone = null;
 
     #[ORM\Column]
-    private ?int $yearsOld = null;
+    private ?\DateTimeImmutable $birthday = null;
 
     #[ORM\Column(length: 10)]
     private ?string $genre = null;
 
     #[ORM\OneToMany(mappedBy: 'canSend', targetEntity: Message::class)]
     private Collection $messages;
-
-    #[ORM\ManyToOne(inversedBy: 'users')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Training $createdBy = null;
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
@@ -147,14 +145,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getFisrtname(): ?string
+    public function getFirstname(): ?string
     {
-        return $this->fisrtname;
+        return $this->firstname;
     }
 
-    public function setFisrtname(string $fisrtname): static
+    public function setFirstname(string $firstname): static
     {
-        $this->fisrtname = $fisrtname;
+        $this->firstname = $firstname;
 
         return $this;
     }
@@ -183,14 +181,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getYearsOld(): ?int
+    public function getBirthday(): ?\DateTimeImmutable
     {
-        return $this->yearsOld;
+        return $this->birthday;
     }
 
-    public function setYearsOld(int $yearsOld): static
+    public function setBirthday(?\DateTimeImmutable $birthday): static
     {
-        $this->yearsOld = $yearsOld;
+        $this->$birthday = $birthday;
 
         return $this;
     }
@@ -233,18 +231,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $message->setCanSend(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getCreatedBy(): ?Training
-    {
-        return $this->createdBy;
-    }
-
-    public function setCreatedBy(?Training $createdBy): static
-    {
-        $this->createdBy = $createdBy;
 
         return $this;
     }

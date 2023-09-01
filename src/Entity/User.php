@@ -85,9 +85,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Training::class)]
+    private Collection $canCreate;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Message::class)]
+    private Collection $canSend;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Articles::class)]
+    private Collection $canWrite;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class)]
+    private Collection $canPost;
+
 
     public function __construct()
     {
+        $this->canCreate = new ArrayCollection();
+        $this->canSend = new ArrayCollection();
+        $this->canWrite = new ArrayCollection();
+        $this->canPost = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -235,5 +251,125 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString()
     {
         return $this->getBirthday();
+    }
+
+    /**
+     * @return Collection<int, Training>
+     */
+    public function getCanCreate(): Collection
+    {
+        return $this->canCreate;
+    }
+
+    public function addCanCreate(Training $canCreate): static
+    {
+        if (!$this->canCreate->contains($canCreate)) {
+            $this->canCreate->add($canCreate);
+            $canCreate->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCanCreate(Training $canCreate): static
+    {
+        if ($this->canCreate->removeElement($canCreate)) {
+            // set the owning side to null (unless already changed)
+            if ($canCreate->getUser() === $this) {
+                $canCreate->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Message>
+     */
+    public function getCanSend(): Collection
+    {
+        return $this->canSend;
+    }
+
+    public function addCanSend(Message $canSend): static
+    {
+        if (!$this->canSend->contains($canSend)) {
+            $this->canSend->add($canSend);
+            $canSend->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCanSend(Message $canSend): static
+    {
+        if ($this->canSend->removeElement($canSend)) {
+            // set the owning side to null (unless already changed)
+            if ($canSend->getUser() === $this) {
+                $canSend->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Articles>
+     */
+    public function getCanWrite(): Collection
+    {
+        return $this->canWrite;
+    }
+
+    public function addCanWrite(Articles $canWrite): static
+    {
+        if (!$this->canWrite->contains($canWrite)) {
+            $this->canWrite->add($canWrite);
+            $canWrite->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCanWrite(Articles $canWrite): static
+    {
+        if ($this->canWrite->removeElement($canWrite)) {
+            // set the owning side to null (unless already changed)
+            if ($canWrite->getUser() === $this) {
+                $canWrite->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getCanPost(): Collection
+    {
+        return $this->canPost;
+    }
+
+    public function addCanPost(Comment $canPost): static
+    {
+        if (!$this->canPost->contains($canPost)) {
+            $this->canPost->add($canPost);
+            $canPost->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCanPost(Comment $canPost): static
+    {
+        if ($this->canPost->removeElement($canPost)) {
+            // set the owning side to null (unless already changed)
+            if ($canPost->getUser() === $this) {
+                $canPost->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

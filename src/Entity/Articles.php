@@ -29,6 +29,10 @@ class Articles
     #[ORM\Column(nullable: true)]
     private ?int $unliked = null;
 
+    #[ORM\ManyToOne(inversedBy: 'canWrite')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
 
     public function getId(): ?int
     {
@@ -79,6 +83,18 @@ class Articles
     public function setUnliked(?int $unliked): static
     {
         $this->unliked = $unliked;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

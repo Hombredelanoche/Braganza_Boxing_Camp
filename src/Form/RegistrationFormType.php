@@ -6,21 +6,19 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 
 use function PHPSTORM_META\type;
 
@@ -34,31 +32,18 @@ class RegistrationFormType extends AbstractType
             ->add('email', RepeatedType::class, [
                 'type' => EmailType::class,
                 'first_options' => ["label" => "Email"],
-                'second_options' => ["label" => "Vérifier votre email"]
+                'second_options' => ["label" => "Vérification email"]
             ])
             ->add('plainPassword', RepeatedType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
                 "type" => PasswordType::class,
                 "first_options" => ["label" => "Mot de passe", "hash_property_path" => "password"],
                 "second_options" => ["label" => "Vérifier votre mot de passe"],
                 "mapped" => false,
-                "attr" => ["autocomplete" => "new-password"],
-                "constraints" => [
-                    new NotBlank([
-                        "message" => "Veuillez rentrer un mot de passe valide",
-                    ]),
-                    new Length([
-                        "min" => 6,
-                        "minMessage" => "Votre mot de passe doit faire au moins 6 caratères",
-                        // max length allowed by Symfony for security reasons
-                        "max" => 4096,
-                    ]),
-                ],
+                "attr" => ["autocomplete" => "new-password"]
             ])
 
             ->add('phone', TelType::class, ["label" => "Téléphone"])
-            ->add('birthday', DateType::class, ["label" => "Date de naissance", "input" => "datetime_immutable", 'format' => "d-M-y"])
+            ->add('birthday', DateType::class, ["label" => "Date de naissance", "input" => "datetime_immutable", 'widget' => 'single_text'])
             ->add('genre', ChoiceType::class, [
                 'choices' => [
                     'Homme' => 'homme',

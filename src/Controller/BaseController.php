@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/')]
-class HomepageController extends AbstractController
+class BaseController extends AbstractController
 {
     #[Route('/', name: 'app_homepage')]
     public function index(): Response
@@ -17,7 +17,7 @@ class HomepageController extends AbstractController
         ]);
     }
 
-    #[Route(path: '/S\'enregistrer', name: 'app_resgister')]
+    #[Route(path: '/inscription', name: 'app_register')]
     public function registration(): Response
     {
         return $this->render('registration/register.html.twig');

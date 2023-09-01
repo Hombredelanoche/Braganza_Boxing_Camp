@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\MessageRepository;
+use App\Traits\TimestampableTrait;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
 class Message
 {
+    use TimestampableTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -20,14 +23,6 @@ class Message
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $Content = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $CreatedAt = null;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $updatedAt = null;
-
-    #[ORM\ManyToOne(inversedBy: 'messages')]
-    private ?User $canSend = null;
 
     public function getId(): ?int
     {
@@ -54,42 +49,6 @@ class Message
     public function setContent(?string $Content): static
     {
         $this->Content = $Content;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->CreatedAt;
-    }
-
-    public function setCreatedAt(?\DateTimeImmutable $CreatedAt): static
-    {
-        $this->CreatedAt = $CreatedAt;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    public function getCanSend(): ?User
-    {
-        return $this->canSend;
-    }
-
-    public function setCanSend(?User $canSend): static
-    {
-        $this->canSend = $canSend;
 
         return $this;
     }

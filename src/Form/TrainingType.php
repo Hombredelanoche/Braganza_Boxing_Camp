@@ -3,8 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Training;
+use App\Entity\User;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -42,6 +45,10 @@ class TrainingType extends AbstractType
                 'required' => false,
                 'input' => 'datetime_immutable',
                 'date_widget' => 'single_text'
+            ])
+            ->add('user', EntityType::class, [
+                'class' => User::class,
+                'choice_label' => 'name'
             ]);
     }
 

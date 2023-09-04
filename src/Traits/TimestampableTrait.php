@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\Types;
 
 trait TimestampableTrait
 {
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column(nullable: false, options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\Column(nullable: true)]

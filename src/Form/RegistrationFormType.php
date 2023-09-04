@@ -34,17 +34,17 @@ class RegistrationFormType extends AbstractType
                 'first_options' => ["label" => "Email"],
                 'second_options' => ["label" => "Vérification email"]
             ])
-            ->add('plainPassword', RepeatedType::class, [
+            ->add('password', RepeatedType::class, [
                 "type" => PasswordType::class,
-                "first_options" => ["label" => "Mot de passe", "hash_property_path" => "password"],
+                "first_options" => ["label" => "password"],
                 "second_options" => ["label" => "Vérifier votre mot de passe"],
-                "mapped" => false,
+                "mapped" => true,
                 "attr" => ["autocomplete" => "new-password"]
             ])
-
+            ->remove('roles')
             ->add('phone', TelType::class, ["label" => "Téléphone"])
             ->add('birthday', DateType::class, ["label" => "Date de naissance", "input" => "datetime_immutable", 'widget' => 'single_text'])
-            ->add('genre', ChoiceType::class, [
+            ->add('gender', ChoiceType::class, [
                 'choices' => [
                     'Homme' => 'homme',
                     'Femme' => 'femme',
@@ -52,11 +52,11 @@ class RegistrationFormType extends AbstractType
                 ]
             ])
             ->add('createdAt', HiddenType::class, [])
-            ->add('agreeTerms', CheckboxType::class, [
+            ->add('isVerified', CheckboxType::class, [
                 "mapped" => false,
                 "constraints" => [
                     new IsTrue([
-                        "message" => "You should agree to our terms.",
+                        "message" => "Vous devez accepter les termes de validation.",
                     ]),
                 ],
             ]);

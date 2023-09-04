@@ -224,12 +224,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getGenre(): ?string
+    public function getGender(): ?string
     {
         return $this->gender;
     }
 
-    public function setGenre(string $gender): static
+    public function setGender(string $gender): static
     {
         $this->gender = $gender;
 

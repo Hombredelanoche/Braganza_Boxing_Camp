@@ -14,13 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/training')]
 class TrainingController extends AbstractController
 {
-    #[Route('/', name: 'app_calendar', methods: ['GET'])]
-    public function showCalendar(): Response
-    {
-        return $this->render('training/training.html.twig');
-    }
-
-    #[Route('/showAll', name: 'app_allTraining', methods: ['GET'])]
+    #[Route('/', name: 'app_training_index', methods: ['GET'])]
     public function index(TrainingRepository $trainingRepository): Response
     {
         return $this->render('training/index.html.twig', [
@@ -39,7 +33,7 @@ class TrainingController extends AbstractController
             $entityManager->persist($training);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_allTraining', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_training_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('training/new.html.twig', [
@@ -65,7 +59,7 @@ class TrainingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_allTraining', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_training_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('training/edit.html.twig', [
@@ -77,11 +71,11 @@ class TrainingController extends AbstractController
     #[Route('/{id}', name: 'app_training_delete', methods: ['POST'])]
     public function delete(Request $request, Training $training, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $training->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$training->getId(), $request->request->get('_token'))) {
             $entityManager->remove($training);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_allTraining', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_training_index', [], Response::HTTP_SEE_OTHER);
     }
 }

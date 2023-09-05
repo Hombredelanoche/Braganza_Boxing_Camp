@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Création d'un training{% endblock %}
+{% block title %}New Training{% endblock %}
 
 {% block body %}
-<h1>Create new Training</h1>
+    <h1>Create new Training</h1>
 
-{{ include('training/_form.html.twig') }}
+    {{ include('training/_form.html.twig') }}
 
-<a href="{{ path('app_allTraining') }}">back to list</a>
+    <a href="{{ path('app_training_index') }}">back to list</a>
 {% endblock %}

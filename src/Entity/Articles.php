@@ -34,6 +34,8 @@ class Articles
     private ?User $user = null;
 
 
+
+
     public function getId(): ?int
     {
         return $this->id;

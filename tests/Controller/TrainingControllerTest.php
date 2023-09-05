@@ -49,7 +49,10 @@ class TrainingControllerTest extends WebTestCase
             'training[beginAt]' => 'Testing',
             'training[endAt]' => 'Testing',
             'training[title]' => 'Testing',
+            'training[place]' => 'Testing',
+            'training[City]' => 'Testing',
             'training[description]' => 'Testing',
+            'training[user]' => 'Testing',
         ]);
 
         self::assertResponseRedirects('/training/');
@@ -64,7 +67,10 @@ class TrainingControllerTest extends WebTestCase
         $fixture->setBeginAt('My Title');
         $fixture->setEndAt('My Title');
         $fixture->setTitle('My Title');
+        $fixture->setPlace('My Title');
+        $fixture->setCity('My Title');
         $fixture->setDescription('My Title');
+        $fixture->setUser('My Title');
 
         $this->manager->persist($fixture);
         $this->manager->flush();
@@ -84,7 +90,10 @@ class TrainingControllerTest extends WebTestCase
         $fixture->setBeginAt('My Title');
         $fixture->setEndAt('My Title');
         $fixture->setTitle('My Title');
+        $fixture->setPlace('My Title');
+        $fixture->setCity('My Title');
         $fixture->setDescription('My Title');
+        $fixture->setUser('My Title');
 
         $this->manager->persist($fixture);
         $this->manager->flush();
@@ -95,7 +104,10 @@ class TrainingControllerTest extends WebTestCase
             'training[beginAt]' => 'Something New',
             'training[endAt]' => 'Something New',
             'training[title]' => 'Something New',
+            'training[place]' => 'Something New',
+            'training[City]' => 'Something New',
             'training[description]' => 'Something New',
+            'training[user]' => 'Something New',
         ]);
 
         self::assertResponseRedirects('/training/');
@@ -105,7 +117,10 @@ class TrainingControllerTest extends WebTestCase
         self::assertSame('Something New', $fixture[0]->getBeginAt());
         self::assertSame('Something New', $fixture[0]->getEndAt());
         self::assertSame('Something New', $fixture[0]->getTitle());
+        self::assertSame('Something New', $fixture[0]->getPlace());
+        self::assertSame('Something New', $fixture[0]->getCity());
         self::assertSame('Something New', $fixture[0]->getDescription());
+        self::assertSame('Something New', $fixture[0]->getUser());
     }
 
     public function testRemove(): void
@@ -118,7 +133,10 @@ class TrainingControllerTest extends WebTestCase
         $fixture->setBeginAt('My Title');
         $fixture->setEndAt('My Title');
         $fixture->setTitle('My Title');
+        $fixture->setPlace('My Title');
+        $fixture->setCity('My Title');
         $fixture->setDescription('My Title');
+        $fixture->setUser('My Title');
 
         $this->manager->persist($fixture);
         $this->manager->flush();

@@ -39,8 +39,9 @@ class Training
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    public function __construct()
+    public function __toString()
     {
+        return $this->getUser()->getName();
     }
 
     public function getId(): ?int

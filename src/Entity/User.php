@@ -106,6 +106,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->canPost = new ArrayCollection();
     }
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -248,10 +249,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->getBirthday();
-    }
+
 
     /**
      * @return Collection<int, Training>

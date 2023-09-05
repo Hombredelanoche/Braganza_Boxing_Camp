@@ -239,12 +239,12 @@ header {
 }
 
 .navBar .surf {
-    width: 80%;
+    width: 75%;
     display: flex;
 }
 
-.navBar .logo {
-    width: 20%;
+.navBar .log {
+    width: 25%;
     display: flex;
 }
 

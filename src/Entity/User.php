@@ -97,6 +97,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Comment::class)]
     private Collection $canPost;
 
+    public function __toString()
+    {
+        return $this->name;
+    }
 
     public function __construct()
     {

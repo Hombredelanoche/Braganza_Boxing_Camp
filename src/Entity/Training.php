@@ -30,7 +30,7 @@ class Training
     private ?string $place = null;
 
     #[ORM\Column(length: 100)]
-    private ?string $City = null;
+    private ?string $city = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
@@ -39,10 +39,8 @@ class Training
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    public function __toString()
-    {
-        return $this->getUser()->getName();
-    }
+
+
 
     public function getId(): ?int
     {
@@ -97,14 +95,14 @@ class Training
         return $this;
     }
 
-    public function getCity(): ?string
+    public function getcity(): ?string
     {
-        return $this->City;
+        return $this->city;
     }
 
-    public function setCity(string $City): static
+    public function setcity(string $city): static
     {
-        $this->City = $City;
+        $this->city = $city;
 
         return $this;
     }

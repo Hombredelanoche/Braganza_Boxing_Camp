@@ -14,10 +14,7 @@ class MessageType extends AbstractType
         $builder
             ->add('title')
             ->add('Content')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('user')
-        ;
+            ->add('user');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

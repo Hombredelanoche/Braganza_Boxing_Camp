@@ -33,6 +33,9 @@ class Articles
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
+
+
+
     public function getId(): ?int
     {
         return $this->id;

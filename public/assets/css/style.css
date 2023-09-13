@@ -181,6 +181,7 @@ ul {
 .btn-primary {
     background-color: var(--secondary-color);
     color: var(--white-color);
+    font-weight: bolder;
 }
 
 .btn-back {

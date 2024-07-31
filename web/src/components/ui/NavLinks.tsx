@@ -1,10 +1,8 @@
-"use client";
 import { navLinks } from "@/constants/constants";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const NavLinks = () => {
-  const [activeLink, setActiveLink] = useState(null);
   const link = navLinks();
 
   return (

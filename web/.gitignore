@@ -31,8 +31,11 @@ yarn-error.log*
 # vercel
 .vercel
 
-# public 
+# publicfiles
 /public
+
+# videofiles
+/videos
 
 # typescript
 *.tsbuildinfo

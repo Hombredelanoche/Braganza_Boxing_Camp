@@ -1,12 +1,16 @@
-import { LegalConditionsLinksProps, NavLinkProps } from "@/services/interfaces";
+import {
+  CoachInformationsProps,
+  LegalConditionsLinksProps,
+  NavLinkProps,
+} from "@/services/interfaces";
 
-export { navLinks, legalConditionsLinks };
+export { navLinks, legalConditionsLinks, coachInformations };
 
 const navLinks = (): NavLinkProps[] => [
   { id: "#coach", label: "Coach" },
   { id: "#planning", label: "Planning" },
-  { id: "#forfait", label: "Nos Forfaits" },
-  { id: "#contacter", label: "Nous contacter" },
+  { id: "#subscription", label: "Nos Forfaits" },
+  { id: "#contactUs", label: "Nous contacter" },
 ];
 
 const legalConditionsLinks = (): LegalConditionsLinksProps[] => [
@@ -18,4 +22,17 @@ const legalConditionsLinks = (): LegalConditionsLinksProps[] => [
     name: "Conditions générales de vente",
   },
   { href: "/aboutUs", title: "aboutUs", name: "En savoir plus" },
+];
+
+const coachInformations = (): CoachInformationsProps[] => [
+  {
+    title: "Coach",
+    clubs: [
+      "Atch Academy",
+      "Fitness Park",
+      "France Boxing Club",
+      "Braganza Boxing Camp",
+    ],
+    resume: "",
+  },
 ];

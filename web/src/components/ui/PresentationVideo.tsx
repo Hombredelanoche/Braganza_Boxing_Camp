@@ -1,10 +1,19 @@
 import React from "react";
+import Video from "next-video";
+import presentation from "@@/videos/presentionVideo.mp4";
 
 const PresentationVideo = () => {
   return (
     <>
-      <section className="w-full h-screen">
-        <video src="/presentationVideo.mp4"></video>
+      <section>
+        <Video
+          src={presentation}
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls={false}
+        />
       </section>
     </>
   );

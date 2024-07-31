@@ -8,3 +8,9 @@ export interface LegalConditionsLinksProps {
   title: string;
   name: string;
 }
+
+export interface CoachInformationsProps {
+  title: string;
+  clubs: Array<string>;
+  resume: string;
+}

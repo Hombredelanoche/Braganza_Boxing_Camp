@@ -1,15 +1,16 @@
-import ContactMe from "@/components/ui/ContactMe";
+import LegalConditions from "@/components/ui/LegalConditions";
 import SocialMedias from "@/components/ui/SocialMedias";
 import React from "react";
 
 const Footer = () => {
   return (
     <>
-      <footer className="flex flex-col bg-gray-300">
-        <section className="flex justify-between h-11]">
+      <footer className="flex flex-col">
+        <section className="flex justify-between items-center text-center h-40 bg-gray-100">
           <SocialMedias />
-          <ContactMe />
+          <LegalConditions />
         </section>
+        <section className="flex"></section>
       </footer>
     </>
   );

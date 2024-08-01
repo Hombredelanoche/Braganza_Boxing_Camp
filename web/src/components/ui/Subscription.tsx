@@ -1,7 +1,11 @@
 import React from "react";
 
 const Subscription = () => {
-  return <div></div>;
+  return (
+    <>
+      <section id="subscription">Subscription</section>
+    </>
+  );
 };
 
 export default Subscription;

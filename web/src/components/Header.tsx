@@ -4,7 +4,7 @@ import NavLogo from "@/components/ui/NavLogo";
 const Header = () => {
   return (
     <>
-      <header className="flex flex-col justify-center items-center content-center gap-10 bg-secondary p-4">
+      <header className="flex justify-between items-center content-center md:max-w-5xl p-4 mx-auto shadow-sm rounded-sm">
         <NavLogo />
         <NavLinks />
       </header>

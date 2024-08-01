@@ -10,13 +10,13 @@ const config: Config = {
     extend: {
       backgroundColor: {
         primary: "#fef663",
-        secondary: "#001B7B",
-        secondaryLight: "#2A20B4",
+        secondary: "#3d3d3d",
+        secondaryLight: "#4b4b4b",
       },
       colors: {
         primary: "#fef663",
-        secondary: "#001B7B",
-        secondaryLight: "#2A20B4",
+        secondary: "#3d3d3d",
+        secondaryLight: "#4b4b4b",
       },
     },
   },

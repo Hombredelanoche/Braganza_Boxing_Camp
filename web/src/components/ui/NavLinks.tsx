@@ -7,12 +7,12 @@ const NavLinks = () => {
 
   return (
     <nav>
-      <ul className="flex gap-14 text-sm font-semibold text-primary max-lg:hidden">
+      <ul className="flex gap-14 text-sm max-lg:hidden  ">
         {link.map((item) => (
           <li key={item.label}>
             <Link
               href={item.id}
-              className="font-montserrat leading-normal text-md"
+              className="leading-normal font-semibold text-secondary text-md hover:font-bold hover:text-secondaryLight transition-all"
             >
               {item.label}
             </Link>

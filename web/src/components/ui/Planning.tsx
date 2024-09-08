@@ -1,13 +1,14 @@
+import BlockTitle from "@/components/ui/uiElements/BlockTitle";
+import Calendar from "@/components/ui/uiElements/Calendar";
 import Container from "@/components/ui/uiElements/Container";
 import React from "react";
 
 const Planning = () => {
   return (
     <>
-      <Container id="planning">
-        <article>
-          <h1>Mon planning</h1>
-        </article>
+      <BlockTitle id="planning" title="Planning" />
+      <Container>
+        <Calendar />
       </Container>
     </>
   );

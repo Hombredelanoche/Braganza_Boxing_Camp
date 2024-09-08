@@ -12,7 +12,7 @@ const NavLinks = () => {
           <li key={item.label}>
             <Link
               href={item.id}
-              className="leading-normal font-semibold text-white text-md hover:font-bold hover:text-secondaryLight hover:border-b-2 hover:border-secondaryLight  transition-all"
+              className="leading-normal font-semibold text-md hover:font-bold hover:text-secondaryLight hover:border-b-2 hover:border-red-500 transition-all"
             >
               {item.label}
             </Link>

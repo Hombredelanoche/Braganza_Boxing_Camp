@@ -19,9 +19,9 @@ const Coach = () => {
         </article>
         <article className="flex">
           <div className="flex max-lg:flex-col max-lg:justify-center sm:items-center">
-            <div className="flex flex-col gap-2 rounded-lg ">
-              <h4 className="text-xl font-bold ">Jean-Michel Braganza</h4>
-              <div className="text-sm">Coach - Boxe anglaise</div>
+            <div className="flex flex-col gap-2 ">
+              <h4 className="text-2xl font-bold ">Jean-Michel Braganza</h4>
+              <div className="text-sm font-bold">Coach - Boxe anglaise</div>
               <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Impedit earum dolorem dolorum laborum quis? Magnam, quas neque,

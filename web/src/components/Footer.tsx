@@ -1,6 +1,6 @@
-import Copyright from "@/components/ui/Copyright";
-import LegalConditions from "@/components/ui/LegalConditions";
-import SocialMedias from "@/components/ui/SocialMedias";
+import Copyright from "@/components/ui/uiElements/Copyright";
+import LegalConditions from "@/components/ui/uiElements/LegalConditions";
+import SocialMedias from "@/components/ui/uiElements/SocialMedias";
 import React from "react";
 
 const Footer = () => {

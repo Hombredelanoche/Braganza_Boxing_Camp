@@ -4,7 +4,7 @@ import React from "react";
 const NavLogo = () => {
   return (
     <a href="/">
-      <Image src="/LOGO.png" alt="logo" width={200} height={200} />
+      <Image src="/LOGO_J.png" alt="logo" width={160} height={160} />
     </a>
   );
 };

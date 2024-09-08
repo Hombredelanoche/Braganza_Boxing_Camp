@@ -1,9 +1,14 @@
+import Container from "@/components/ui/uiElements/Container";
 import React from "react";
 
 const Planning = () => {
   return (
     <>
-      <section id="planning">Planning</section>
+      <Container id="planning">
+        <article>
+          <h1>Mon planning</h1>
+        </article>
+      </Container>
     </>
   );
 };

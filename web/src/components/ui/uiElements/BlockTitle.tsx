@@ -1,11 +1,15 @@
 import React from "react";
 
-const BlockTitle = ({ title, children }) => {
+const BlockTitle = ({ id, title }) => {
   return (
     <>
-      <article className="flex flex-col h-fit gap-2 w-2/3">
-        <h1 className="text-4xl w-fit"> {title} </h1>
-        <p className="text-sm">{children}</p>
+      <article className="flex w-full justify-start">
+        <h1
+          id={id}
+          className="text-4xl font-bold w-full p-5 border-b-2 border-black"
+        >
+          {title}
+        </h1>
       </article>
     </>
   );

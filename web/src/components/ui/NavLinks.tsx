@@ -1,6 +1,6 @@
 import { navLinks } from "@/constants/constants";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 
 const NavLinks = () => {
   const link = navLinks();
@@ -12,7 +12,7 @@ const NavLinks = () => {
           <li key={item.label}>
             <Link
               href={item.id}
-              className="leading-normal font-semibold text-secondary text-md hover:font-bold hover:text-secondaryLight transition-all"
+              className="leading-normal font-semibold text-white text-md hover:font-bold hover:text-secondaryLight hover:border-b-2 hover:border-secondaryLight  transition-all"
             >
               {item.label}
             </Link>

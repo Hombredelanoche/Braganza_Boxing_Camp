@@ -20,10 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <section>
+        <section className="bg-gray-50">
           <Header />
           <PresentationVideo />
-          <main className="md:max-w-5xl mx-auto">{children}</main>
+          <main className="md:max-w-5xl mx-auto ">{children}</main>
           <Footer />
         </section>
       </body>

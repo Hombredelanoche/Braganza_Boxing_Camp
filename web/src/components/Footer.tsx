@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer className="flex flex-col">
-        <section className="flex max-lg:flex-col justify-between items-center text-center h-fit py-5 ">
+        <section className="flex max-lg:flex-col justify-between items-center text-center h-fit py-5 shadow-sm">
           <SocialMedias />
           <LegalConditions />
         </section>

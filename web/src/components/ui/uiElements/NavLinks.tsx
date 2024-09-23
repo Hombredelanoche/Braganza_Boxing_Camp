@@ -7,7 +7,7 @@ const NavLinks = () => {
 
   return (
     <nav>
-      <ul className="flex gap-14 max-lg:hidden">
+      <ul className="flex gap-8 max-lg:hidden">
         {link.map((item) => (
           <li key={item.label}>
             <Link

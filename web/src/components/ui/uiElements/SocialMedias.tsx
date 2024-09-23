@@ -5,9 +5,9 @@ import { SocialIcon } from "react-social-icons";
 const SocialMedias = () => {
   return (
     <>
-      <article className="flex flex-col mx-auto gap-5">
+      <article className="flex flex-col mx-auto gap-10">
         <h2 className="flex flex-col justify-center items-center">
-          <Image src="/LOGO.png" alt="logoFooter" width={100} height={100} />
+          <Image src="/LOGO.png" alt="logoFooter" width={150} height={150} />
         </h2>
         <div className="flex gap-14 items-center align-middle text-center justify-center">
           <SocialIcon

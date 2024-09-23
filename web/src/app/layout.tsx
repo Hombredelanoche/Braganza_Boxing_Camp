@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <section>
           <Header />
-          <main className="md:max-w-5xl mx-auto">{children}</main>
+          <main>{children}</main>
           <Footer />
         </section>
       </body>

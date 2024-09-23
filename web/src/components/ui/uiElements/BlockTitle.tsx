@@ -6,7 +6,7 @@ const BlockTitle = ({ id, title }) => {
       <article className="flex w-full justify-start">
         <h1
           id={id}
-          className="text-6xl font-bold w-full p-5 border-b-2 border-red-500"
+          className="text-5xl font-bold border-black bg-black text-white rounded-md p-5 w-fit"
         >
           {title}
         </h1>

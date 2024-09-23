@@ -9,15 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "#fef663",
-        secondary: "#3d3d3d",
-        secondaryLight: "#4b4b4b",
+        primary: "#000000",
+        primaryLight: "#232826",
+        secondary: "#ff3838",
+        secondaryLight: "#ff4d4d",
+        warning: "#ff9f1a",
       },
       colors: {
-        primary: "#fef663",
-        secondary: "#3d3d3d",
-        secondaryLight: "#4b4b4b",
+        primary: "#3d3d3d",
+        primaryLight: "#4b4b4b",
+        secondary: "#ff3838",
+        secondaryLight: "#ff4d4d",
+        warning: "#ff9f1a",
       },
+      fontFamily: {},
     },
   },
   plugins: [],

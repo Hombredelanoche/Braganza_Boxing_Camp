@@ -1,8 +1,7 @@
 import clsx from "clsx";
-import Image from "next/image";
 import React from "react";
 
-const TrainingCard = ({ title, className = null, children }) => {
+const Card = ({ title, className = null, children }) => {
   return (
     <>
       <article
@@ -18,4 +17,4 @@ const TrainingCard = ({ title, className = null, children }) => {
   );
 };
 
-export default TrainingCard;
+export default Card;

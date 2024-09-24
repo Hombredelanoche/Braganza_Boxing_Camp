@@ -1,12 +1,12 @@
 import React from "react";
 import { clsx } from "clsx";
 
-const Container = ({ children, className = "" }) => {
+const SubContainer = ({ children, className = "" }) => {
   const classProps =
-    "flex max-lg:flex-col gap-16 h-fit p-10 m-10 shadow-md rounded-md items-center bg-gray-50";
+    "flex max-lg:flex-col gap-10 p-10 m-10 shadow-md rounded-md items-center";
   return (
     <>
-      <section
+      <article
         className={clsx(
           classProps,
 
@@ -14,9 +14,9 @@ const Container = ({ children, className = "" }) => {
         )}
       >
         {children}
-      </section>
+      </article>
     </>
   );
 };
 
-export default Container;
+export default SubContainer;

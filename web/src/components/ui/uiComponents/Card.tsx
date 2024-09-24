@@ -6,7 +6,7 @@ const Card = ({ title, className = null, children }) => {
     <>
       <article
         className={clsx(
-          `flex flex-col justify-center mx-auto items-center text-center p-5 gap-3 border-2 shadow-sm rounded-lg w-80 bg-white hover:text-white hover:bg-black transition-all`,
+          `flex flex-col justify-center mx-auto items-center text-center p-5 gap-3 border-2 shadow-sm rounded-lg w-80 bg-white`,
           className
         )}
       >

@@ -8,21 +8,21 @@ const PresentationPage = () => {
     <>
       <Container>
         <div className="flex flex-col max-lg:items-center items-baseline justify-center">
-          <div className="flex flex-col text-5xl font-bold text-primaryLight ">
+          <div className="flex flex-col max-lg:items-center text-6xl font-extrabold text-primaryLight ">
             <h1>LE NOBLE ART</h1>
             <h2>
               A VOTRE{" "}
               <span className="text-secondary font-extrabold">RYTHME</span> !
             </h2>
-            <div className="flex flex-col py-4">
-              <p className="text-primaryLight text-sm font-bold">
+            <div className="flex flex-col max-lg:items-center py-2">
+              <p className="text-primaryLight text-lg font-bold">
                 Des cours pour{" "}
                 <span className="text-secondary font-extrabold">
                   tout les niveaux
                 </span>{" "}
                 !
               </p>
-              <p className="text-primary text-sm font-bold">
+              <p className="text-primary text-lg font-bold">
                 Une méthode d{"'"}entrainement baser sur{" "}
                 <span className="text-secondary font-extrabold">
                   la technicité
@@ -30,13 +30,13 @@ const PresentationPage = () => {
                 !
               </p>
             </div>
-            <div className="flex flex-col py-2 text-xs font-bold text-secondary">
+            <div className="flex flex-col py-2 text-base font-bold text-secondary">
               Premier cours offert
             </div>
           </div>
-          <Button label={"Cours d'essai !"} />
+          <Button label={"S'inscrire !"} />
         </div>
-        <div>
+        <div className="flex flex-col max-lg:items-center items-baseline justify-center">
           <Image
             src="/Match_Pro.jpg"
             width={500}

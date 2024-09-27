@@ -6,12 +6,12 @@ const Card = ({ title, className = null, children }) => {
     <>
       <article
         className={clsx(
-          `flex flex-col justify-center mx-auto items-center text-center p-5 gap-3 border-2 shadow-sm rounded-lg w-80 bg-white`,
+          `flex flex-col p-5 gap-3 border-2 shadow-md transition-all duration-300 hover:shadow-secondary  rounded-lg w-80 bg-white`,
           className
         )}
       >
-        <h2 className="text-xl font-bold"> {title} </h2>
-        <div> {children} </div>
+        <h2 className="text-xl font-extrabold text-center py-3"> {title} </h2>
+        <div className="flex flex-col gap-5 w-full"> {children} </div>
       </article>
     </>
   );

@@ -2,6 +2,7 @@ import Button from "@/components/ui/uiComponents/Button";
 import Container from "@/components/ui/uiComponents/Container";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const PresentationPage = () => {
   return (

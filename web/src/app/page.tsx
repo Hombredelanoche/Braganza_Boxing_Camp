@@ -1,5 +1,5 @@
-import PresentationPage from "@/components/ui/PresentationPage";
 import Offers from "@/components/ui/uiElements/MainSections/Offers";
+import PresentationPage from "@/components/ui/uiElements/MainSections/PresentationPage";
 import Training from "@/components/ui/uiElements/MainSections/Training";
 
 export default function Home() {

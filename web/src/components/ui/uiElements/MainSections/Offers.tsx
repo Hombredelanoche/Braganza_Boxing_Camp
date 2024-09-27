@@ -9,14 +9,15 @@ const Offers = () => {
     <>
       <Title id={"offers"} label={"Nos offres"} color="black" />
       <Container background="bg-primary">
-        <Card title="Basics Offer">
-          <Button label={"Valider"} bgColor="secondary" />
-        </Card>
-        <Card title="Silver Offer">
-          <Button label={"Valider"} bgColor="secondary" />
-        </Card>
-        <Card title="Gold Offer">
-          <Button label={"Valider"} bgColor="secondary" />
+        <Card title="Mercredi">
+          <div className="flex">
+            <p>Lieu</p>
+            <p>Boxium</p>
+          </div>
+          <div className="flex">Heure</div>
+          <p>Description</p>
+          <div className="flex">Prix</div>
+          <Button label={"S'inscrire"} bgColor="primary" />
         </Card>
       </Container>
     </>

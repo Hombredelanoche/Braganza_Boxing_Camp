@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import clsx from "clsx";
+import { useRouter } from "next/navigation";
 
 const defaultBg = {
   primary:
@@ -24,7 +26,15 @@ const Button = ({
   bgColor = "primary",
   size = "normalSize",
   duration = "medium",
+  path,
 }) => {
+  const router = useRouter();
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (path) {
+      router.push(path);
+    }
+  };
   return (
     <>
       <button
@@ -34,6 +44,7 @@ const Button = ({
           defaultSize[size],
           durationTiming[duration]
         )}
+        onClick={handleClick}
       >
         {label}
       </button>

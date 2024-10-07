@@ -9,15 +9,20 @@ import Title from "@/components/ui/uiComponents/Title";
 const Training = () => {
   return (
     <>
-      <Title id={"training"} color="secondaryLight" label={"Training"} />
+      <Title
+        id={"training"}
+        color="white"
+        label={"Training"}
+        className="bg-black"
+      />
       <Container
         background="bg-secondaryLight"
         flexDirection="col"
         className="gap-28"
       >
         <SubContainer>
-          <div className="flex flex-col px-10 py-5 items-baseline justify-center bg-white shadow-lg rounded-lg">
-            <h1 className="text-5xl py-5 font-extrabold text-primary">
+          <div className="flex flex-col px-10 py-5 items-baseline justify-center bg-white shadow-lg rounded-lg h-[100%]">
+            <h1 className="text-4xl py-5 font-extrabold text-primary">
               Les Bases de la Boxe Anglaise
             </h1>
             <div className="text-md font-semibold text-primaryLight">
@@ -35,7 +40,7 @@ const Training = () => {
               Des cours individuels ou en groupe !
             </p>
             <div className="flex py-4 gap-5">
-              <Button label={"En savoir plus !"} bgColor="primary" />
+              <Button label={"En savoir plus !"} bgColor="primary" path="" />
               {/* <Button label={"S'inscrire !"} bgColor="secondaryDark" /> */}
             </div>
           </div>
@@ -46,13 +51,13 @@ const Training = () => {
               loop
               preload="auto"
               controls={false}
-              width={850}
+              width={825}
             />
           </div>
         </SubContainer>
         <SubContainer flexReserse="rowReverse">
-          <div className="flex flex-col px-10 py-5 items-baseline justify-center bg-white shadow-lg rounded-lg">
-            <h1 className="text-5xl py-5 font-extrabold text-primary">
+          <div className="flex flex-col px-10 py-5 items-baseline justify-center bg-white shadow-lg rounded-lg h-[100%]">
+            <h1 className="text-4xl py-5 font-extrabold text-primary">
               Perfectionnement technico-tactique
             </h1>
             <div className="text-md font-semibold text-primaryLight">
@@ -70,7 +75,7 @@ const Training = () => {
               Des cours individuels ou en groupe !
             </p>
             <div className="flex py-4 gap-5">
-              <Button label={"En savoir plus !"} bgColor="primary" />
+              <Button label={"En savoir plus !"} bgColor="primary" path="" />
               {/* <Button label={"S'inscrire !"} bgColor="secondaryDark" /> */}
             </div>
           </div>
@@ -81,14 +86,15 @@ const Training = () => {
               loop
               preload="auto"
               controls={false}
-              width={850}
+              width={825}
             />
           </div>
         </SubContainer>
         <SubContainer>
           <div className="flex flex-col px-10 py-5 items-baseline justify-center bg-white shadow-lg rounded-lg">
-            <h1 className="text-5xl py-5 font-extrabold text-primary">
-              Sparring & interClub
+            <h1 className="text-4xl py-5 font-extrabold text-primary">
+              Sparring & interClub (
+              <span className="text-secondary">Confirmés</span>)
             </h1>
             <div className="text-md font-semibold text-primaryLight">
               Des entrainements axés sur l{"'"}apprentissage des points
@@ -105,7 +111,7 @@ const Training = () => {
               Des cours individuels ou en groupe !
             </p>
             <div className="flex py-4 gap-5">
-              <Button label={"En savoir plus !"} bgColor="primary" />
+              <Button label={"En savoir plus !"} bgColor="primary" path="" />
               {/* <Button label={"S'inscrire !"} bgColor="secondaryDark" /> */}
             </div>
           </div>
@@ -116,7 +122,7 @@ const Training = () => {
               loop
               preload="auto"
               controls={false}
-              width={850}
+              width={825}
             />
           </div>
         </SubContainer>

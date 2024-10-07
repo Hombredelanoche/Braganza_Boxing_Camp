@@ -12,7 +12,7 @@ const Title = ({ label, id, color = "white", className = "" }) => {
     <h1
       id={id}
       className={clsx(
-        "flex py-10 px-8 font-extrabold mx-auto text-6xl",
+        "flex py-10 px-8 font-extrabold mx-auto text-6xl w-full justify-center",
         titleColor[color],
         className
       )}

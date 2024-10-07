@@ -5,8 +5,12 @@ const NavCTA = () => {
   return (
     <nav className="max-lg:hidden">
       <ul className="flex gap-3">
-        <Button label={"Se connecter"} bgColor="secondary" />
-        <Button label={"Nous contacter"} bgColor="secondaryDark" />
+        <Button label={"Se connecter"} bgColor="secondary" path="/signin" />
+        <Button
+          label={"Nous contacter"}
+          bgColor="secondaryDark"
+          path="/contactUs"
+        />
       </ul>
     </nav>
   );

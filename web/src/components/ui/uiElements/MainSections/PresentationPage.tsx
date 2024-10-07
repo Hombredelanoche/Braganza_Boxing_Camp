@@ -35,7 +35,7 @@ const PresentationPage = () => {
               Premier cours offert
             </div>
           </div>
-          <Button label={"S'inscrire !"} />
+          <Button label={"S'inscrire !"} path="signup" />
         </div>
         <div className="flex flex-col max-lg:items-center items-baseline justify-center">
           <Image
@@ -43,7 +43,7 @@ const PresentationPage = () => {
             width={500}
             height={600}
             alt="Image de présentation BBC"
-            className="rounded-lg shadow-lg "
+            className="rounded-lg shadow-lg"
           />
         </div>
       </Container>

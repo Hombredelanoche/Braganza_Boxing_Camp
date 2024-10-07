@@ -7,7 +7,7 @@ const SocialMedias = () => {
     <>
       <article className="flex flex-col justify-center items-center mx-auto gap-10">
         <h2>
-          <Image src="/LOGO.png" alt="logoFooter" width={150} height={150} />
+          <Image src="/LOGO.png" alt="logoFooter" width={200} height={200} />
         </h2>
         <div className="flex gap-14 items-center align-middle text-center justify-center">
           <SocialIcon

@@ -27,6 +27,7 @@ const Button = ({
   size = "normalSize",
   duration = "medium",
   path,
+  ...otherProps
 }) => {
   const router = useRouter();
   const handleClick = (e) => {
@@ -39,12 +40,13 @@ const Button = ({
     <>
       <button
         className={clsx(
-          "border-2 rounded-lg text-sm font-bold shadow-md ",
+          "border-2 rounded-lg text-sm font-extrabold shadow-md ",
           defaultBg[bgColor],
           defaultSize[size],
           durationTiming[duration]
         )}
         onClick={handleClick}
+        {...otherProps}
       >
         {label}
       </button>

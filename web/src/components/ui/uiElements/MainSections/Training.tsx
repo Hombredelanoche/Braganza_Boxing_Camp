@@ -94,7 +94,7 @@ const Training = () => {
           <div className="flex flex-col px-10 py-5 items-baseline justify-center bg-white shadow-lg rounded-lg">
             <h1 className="text-4xl py-5 font-extrabold text-primary">
               Sparring & interClub (
-              <span className="text-secondary">Confirmés</span>)
+              <span className="text-secondary">Confirmés seulement</span>)
             </h1>
             <div className="text-md font-semibold text-primaryLight">
               Des entrainements axés sur l{"'"}apprentissage des points

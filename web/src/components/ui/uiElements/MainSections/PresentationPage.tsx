@@ -32,7 +32,7 @@ const PresentationPage = () => {
               </p>
             </div>
             <div className="flex flex-col py-2 text-base font-bold text-secondary">
-              Premier cours offert
+              Votre premier cours offert
             </div>
           </div>
           <Button label={"S'inscrire !"} path="signup" />

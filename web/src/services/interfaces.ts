@@ -8,3 +8,11 @@ export interface LegalConditionsLinksProps {
   title: string;
   name: string;
 }
+
+export interface CreateNewUser {
+  email: string;
+  firstname: string;
+  lastname: string;
+  password: string;
+  gender: string;
+}

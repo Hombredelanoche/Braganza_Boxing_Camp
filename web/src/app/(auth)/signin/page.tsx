@@ -3,12 +3,9 @@ import React from "react";
 const SignInPage = () => {
   return (
     <>
-      <article className="flex">
-        <div className="bg-black">Page</div>
-        <div className="flex flex-col justify-center items-center text-center">
-          Page
-        </div>
-      </article>
+      <section className="flex flex-col gap-3 bg-white">
+        <h1>Connexion</h1>
+      </section>
     </>
   );
 };

@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  MODERATOR
+  USER
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum Status {
+  ACTIVE
+  SUSPENDED
+  DELETED
+}
+
+model User {
+  id                   Int       @id @default(autoincrement())
+  email                String    @unique @db.VarChar(255)
+  firstname            String    @db.VarChar(75)
+  lastname             String    @db.VarChar(75)
+  password             String    @db.VarChar(255)
+  isActif              Status    @default(ACTIVE)
+  gender               Gender    @default(OTHER)
+  role                 Role      @default(USER)
+  phoneNumber          String?   @db.VarChar(20)
+  emailVerified        Boolean   @default(false)
+  activationToken      String?   @db.VarChar(255)
+  resetToken           String?   @db.VarChar(255)
+  resetTokenExpiration DateTime?
+  lastLogin            DateTime?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  Event                Event[]
+}
+
+model Event {
+  id_event   Int      @id @default(autoincrement())
+  adress     String   @db.VarChar(150)
+  price      Int      @db.Integer
+  schedule   DateTime @db.Time()
+  event_date DateTime @db.Date
+  subscriber User     @relation(fields: [id_event], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}

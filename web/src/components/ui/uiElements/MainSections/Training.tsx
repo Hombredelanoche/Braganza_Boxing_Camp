@@ -52,6 +52,7 @@ const Training = () => {
               autoPlay
               loop
               preload="auto"
+              sizes="cover"
               controls={false}
               width={825}
             />
@@ -87,6 +88,7 @@ const Training = () => {
               autoPlay
               loop
               preload="auto"
+              sizes="cover"
               controls={false}
               width={825}
             />
@@ -123,6 +125,7 @@ const Training = () => {
               autoPlay
               loop
               preload="auto"
+              sizes="cover"
               controls={false}
               width={825}
             />

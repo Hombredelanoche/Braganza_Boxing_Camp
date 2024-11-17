@@ -48,6 +48,9 @@ export const genderValidator = yup
   .string()
   .required("Ce Champs ne peut être vide.")
   .oneOf(["Masculin", "Feminin", "Autres"], "Un genre doit-être choisis");
+export const birthdayValidator = yup
+  .date()
+  .required("Vous devez entrer votre date de naissance");
 export const phoneNumberValidator = yup
   .string()
   .required("Le numéro de téléphone ne doit pas être vide.")

@@ -9,7 +9,7 @@ export default function AuthLayout({
     <>
       <main>
         <body>
-          <section className="flex flex-col items-center justify-center w-screen h-screen">
+          <section className="flex flex-col items-center justify-center w-screen min-h-screen">
             {children}
           </section>
         </body>

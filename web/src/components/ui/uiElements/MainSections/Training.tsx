@@ -2,7 +2,9 @@ import Container from "@/components/ui/uiComponents/Container";
 import SubContainer from "@/components/ui/uiComponents/SubContainer";
 import React from "react";
 import Video from "next-video";
-import TestVideo from "@@/videos/test-video-2.mp4";
+import Video1 from "@@/public/_next-video/video-1.mp4";
+import Video2 from "@@/public/_next-video/video-2.mp4";
+import Video3 from "@@/public/_next-video/video-3.mp4";
 import Button from "@/components/ui/uiComponents/Button";
 import Title from "@/components/ui/uiComponents/Title";
 
@@ -46,7 +48,7 @@ const Training = () => {
           </div>
           <div>
             <Video
-              src={TestVideo}
+              src={Video1}
               autoPlay
               loop
               preload="auto"
@@ -81,7 +83,7 @@ const Training = () => {
           </div>
           <div>
             <Video
-              src={TestVideo}
+              src={Video2}
               autoPlay
               loop
               preload="auto"
@@ -117,7 +119,7 @@ const Training = () => {
           </div>
           <div>
             <Video
-              src={TestVideo}
+              src={Video3}
               autoPlay
               loop
               preload="auto"

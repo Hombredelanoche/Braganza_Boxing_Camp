@@ -10,7 +10,7 @@ const SignUpForm = () => {
           <h1>S'inscrire</h1>
         </div>
 
-        <div></div>
+        <div>Se </div>
       </article>
     </>
   );

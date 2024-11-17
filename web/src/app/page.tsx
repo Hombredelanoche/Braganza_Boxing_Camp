@@ -9,7 +9,6 @@ export default function Home() {
         <PresentationPage />
         <Training />
         <Offers />
-        {/* <article className="md:max-w-7xl mx-auto"></article> */}
       </section>
     </>
   );

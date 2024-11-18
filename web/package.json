@@ -34,10 +34,12 @@
     "react": "^18",
     "react-dom": "^18",
     "react-social-icons": "^6.18.0",
+    "remove": "^0.1.5",
     "yup": "^1.4.0"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.60.1",
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.16.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",

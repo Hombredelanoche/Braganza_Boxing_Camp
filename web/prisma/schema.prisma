@@ -34,8 +34,8 @@ model User {
   isActif              Status    @default(ACTIVE)
   gender               Gender    @default(OTHER)
   role                 Role      @default(USER)
-  birthday             DateTime
-  phoneNumber          String?   @db.VarChar(20)
+  birthday             DateTime  @db.Date
+  phoneNumber          String?   @unique @db.VarChar(20)
   emailVerified        Boolean   @default(false)
   activationToken      String?   @db.VarChar(255)
   resetToken           String?   @db.VarChar(255)

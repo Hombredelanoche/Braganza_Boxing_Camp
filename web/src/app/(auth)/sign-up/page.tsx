@@ -1,5 +1,4 @@
 "use client";
-import Button from "@/components/ui/uiComponents/Button";
 import Form from "@/components/ui/uiComponents/Form";
 import FormField from "@/components/ui/uiComponents/FormField";
 import SubmitButton from "@/components/ui/uiComponents/SubmitButton";
@@ -84,12 +83,7 @@ const SignUpForm = () => {
               Vous avez déjà un compte ?
               <Link href="/sign-in"> Cliquez ici !</Link>
             </span>
-            <Button
-              type="submit"
-              label="Valider"
-              path="/"
-              bgColor="secondary"
-            />
+            <SubmitButton disabled />
           </Form>
         </Formik>
       </article>

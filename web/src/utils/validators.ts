@@ -48,14 +48,35 @@ export const genderValidator = yup
   .string()
   .required("Ce Champs ne peut être vide.")
   .oneOf(["Masculin", "Feminin", "Autres"], "Un genre doit-être choisis");
-export const birthdayValidator = yup
-  .date()
-  .required("Vous devez entrer votre date de naissance");
+
 export const phoneNumberValidator = yup
   .string()
-  .required("Le numéro de téléphone ne doit pas être vide.")
+  .required("Ce Champs ne peut être vide.")
   .max(30, "Le numéro de téléphone ne doit pas dépasser 30 chiffres.")
   .matches(
     /^\+?[0-9\s\-]+$/,
     "Le numéro de téléphone doit contenir uniquement des chiffres, des espaces et des tirets, et peut commencer par un '+'."
+  );
+
+const calculateAge = (birthDate) => {
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const monthDiff = today.getMonth() - birth.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+  return age;
+};
+
+export const birthdayValidator = yup
+  .date()
+  .required("Ce Champs ne peut être vide.")
+  .test(
+    "is-old-enough",
+    "Vous devez avoir au moins 10 ans pour vous inscrire",
+    (value) => {
+      if (!value) return false;
+      return calculateAge(value) >= 10;
+    }
   );

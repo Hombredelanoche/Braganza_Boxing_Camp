@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/ui/uiComponents/Button";
 import Form from "@/components/ui/uiComponents/Form";
 import FormField from "@/components/ui/uiComponents/FormField";
 import SubmitButton from "@/components/ui/uiComponents/SubmitButton";
@@ -79,11 +80,16 @@ const SignUpForm = () => {
                 type="text"
               />
             </div>
-            <span className="text-xs text-primaryLight hover:text-primary">
-              Vous avez déjà un compte ?
-              <Link href="/sign-in"> Cliquez ici !</Link>
-            </span>
-            <SubmitButton disabled />
+            <div className="flex flex-col justify-center items-center gap-4">
+              <span className="text-xs font-semibold">
+                Vous avez déjà un compte ?
+                <Link href="/sign-in"> Cliquez ici !</Link>
+              </span>
+              <div className="flex gap-10 justify-center">
+                <Button path="/" label="Annuler" bgColor="primary" />
+                <SubmitButton disabled bgColor="secondary" />
+              </div>
+            </div>
           </Form>
         </Formik>
       </article>

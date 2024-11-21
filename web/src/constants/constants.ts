@@ -6,8 +6,8 @@ const navLinks = (): NavLinkProps[] => [
   { id: "/", label: "Accueil" },
   { id: "#coach", label: "Coach" },
   { id: "#training", label: "Training" },
-  // { id: "#planning", label: "Planning" },
   { id: "#offers", label: "Nos offres" },
+  { id: "#contactUs", label: "Nous contacter" },
 ];
 
 const legalConditionsLinks = (): LegalConditionsLinksProps[] => [

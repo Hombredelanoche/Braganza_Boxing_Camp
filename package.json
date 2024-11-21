@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "negotiator": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/negotiator": "^0.6.3"
+  }
+}

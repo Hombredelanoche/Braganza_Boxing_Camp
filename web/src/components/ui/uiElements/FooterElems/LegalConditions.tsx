@@ -8,7 +8,7 @@ const LegalConditions = () => {
   return (
     <>
       <article className="mx-auto">
-        <ul className="flex flex-col text-left w-fit max-lg:text-center">
+        <ul className="flex flex-col text-left max-lg:text-center">
           {link.map((items) => (
             <li
               key={items.title}

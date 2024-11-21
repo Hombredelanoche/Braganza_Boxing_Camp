@@ -7,7 +7,8 @@ const defaultBg = {
   primary:
     "border-secondaryLight hover:bg-secondary hover:text-white transation-all",
   secondary: "border-primary hover:bg-primary hover:text-white transation-all",
-  secondaryDark: "bg-primary text-white hover:bg-secondaryLight",
+  secondaryDark:
+    "bg-primary border-primary hover:border-secondary text-white hover:bg-secondaryLight",
 };
 
 const defaultSize = {
@@ -40,7 +41,7 @@ const Button = ({
     <>
       <button
         className={clsx(
-          "border-2 rounded-lg text-sm font-extrabold shadow-md ",
+          "border-2 rounded-lg text-sm font-extrabold shadow-md w-40 h-auto",
           defaultBg[bgColor],
           defaultSize[size],
           durationTiming[duration]
